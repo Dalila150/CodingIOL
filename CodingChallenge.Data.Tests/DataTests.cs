@@ -31,8 +31,8 @@ namespace CodingChallenge.Data.Tests
         [TestCase]
         public void TestResumenListaVaciaFormasEnAleman()
         {
-            Assert.AreEqual("<h1>Empty list of shapes!</h1>",
-                FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 2));
+            Assert.AreEqual("<h1>Leere Formenliste!</h1>",
+                FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 3));
         }
 
         [TestCase]

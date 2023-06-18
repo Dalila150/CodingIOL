@@ -1,4 +1,12 @@
-﻿
+﻿/*
+ * Se agregó funcionalidad para poder agregar nuevas figuras para la eleccion del usuario, por lo que el desarrollador solo debería agregar
+   las formulas correspondientes para calcular area y perimetro.
+ 
+ * Se implementó el idioma Aleman, y funcionalidad para poder agregar nuevos idiomas, por lo que el desarrollador solo debería encargarse
+   de implementar las traducciones en el lugar correspondiente. (Para este ejemplo puntual las traducciones estan establecidas de forma tal
+   que son strings aislados, aunque para un proyecto escalable lo ideal seria crear un espacio en el proyecto en el cual se va a agregar un
+   "diccionario" por cada lenguaje que tengamos y dichos archivos por lenguaje deberian de tener todos los strings que se utilizan en el workspace.)
+*/
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +15,6 @@ using System.Text;
 
 namespace CodingChallenge.Data.Classes
 {
-    
     public class FormaGeometrica
     {
         //Deberian almacenarse todas las figuras acá
@@ -73,24 +80,22 @@ namespace CodingChallenge.Data.Classes
                         return "<h1>Lista vacía de formas!</h1>";
                     else
                         return "<h1>Reporte de Formas</h1>";
-                    break;
 
                 case "Ingles":
                     if (listaVacia)
                         return "<h1>Empty list of shapes!</h1>";
                     else
                         return "<h1>Shapes report</h1>";
-                    break;
+                    
                 case "Aleman":
                     if (listaVacia)
                         return "<h1>Leere Formenliste!</h1>";
                     else
                         return "<h1>Formenbericht</h1>";
-                    break;
-
+                    
                 default:
                     throw new Exception("Idioma no soportado.");
-                    break;
+                    
             }
         }
         
@@ -155,7 +160,7 @@ namespace CodingChallenge.Data.Classes
 
                     default:
                         throw new Exception("Idioma no soportado.");
-                        break;
+                        
 
                 }
 
@@ -174,7 +179,7 @@ namespace CodingChallenge.Data.Classes
                         break;
                     default:
                         throw new Exception("Idioma no soportado.");
-                        break;
+                        
                 }
                 sb.Append((areasFormas.Values.Sum()).ToString("#.##"));
 
@@ -197,16 +202,16 @@ namespace CodingChallenge.Data.Classes
                 {
                     case "Castellano":
                         return $"{cantidad} {TraducirForma(tipo, cantidad, idioma)} | Area {area:#.##} | Perimetro {perimetro:#.##} <br/>";
-                        break;
+                        
                     case "Ingles":
                         return $"{cantidad} {TraducirForma(tipo, cantidad, idioma)} | Area {area:#.##} | Perimeter {perimetro:#.##} <br/>";
-                        break;
+                        
                     case "Aleman":
                         return $"{cantidad} {TraducirForma(tipo, cantidad, idioma)} | Bereich {area:#.##} | Perimeter {perimetro:#.##} <br/>";
-                        break;
+                        
                     default:
                         throw new Exception("Idioma no soportado.");
-                        break;
+                       
                 }
             }
             return string.Empty;
@@ -223,53 +228,53 @@ namespace CodingChallenge.Data.Classes
                     {
                         case "Castellano":
                             return cantidad == 1 ? "Cuadrado" : "Cuadrados";
-                            break;
+                            
                         case "Ingles":
                             return cantidad == 1 ? "Square" : "Squares";
-                            break;
+                            
                         case "Aleman":
                             return cantidad == 1 ? "Quadrat" : "Quadrate";
-                            break;
+                            
                         default:
                             throw new Exception("Idioma no soportado.");
-                            break;
+                            
                     }
-                    break;
+                    
                 case 2:
                     switch (nombreIdioma)
                     {
                         case "Castellano":
                             return cantidad == 1 ? "Triángulo" : "Triángulos";
-                            break;
+                            
                         case "Ingles":
                             return cantidad == 1 ? "Triangle" : "Triangles";
-                            break;
+                            
                         case "Aleman":
                             return cantidad == 1 ? "Dreieck" : "Dreiecke";
-                            break;
+                            
                         default:
                             throw new Exception("Idioma no soportado.");
-                            break;
+                            
                     }
-                    break;
+                    
                     
                 case 3:
                     switch (nombreIdioma)
                     {
                         case "Castellano":
                             return cantidad == 1 ? "Círculo" : "Círculos";
-                            break;
+                            
                         case "Ingles":
                             return cantidad == 1 ? "Circle" : "Circles";
-                            break;
+                            
                         case "Aleman":
                             return cantidad == 1 ? "Kreis" : "Kreise";
-                            break;
+                            
                         default:
                             throw new Exception("Idioma no soportado.");
-                            break;
+                            
                     }
-                    break;
+                    
             }
 
             return string.Empty;

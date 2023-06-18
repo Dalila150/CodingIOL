@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace CodingChallenge.Data.Classes
 {
-    /*
-    #region Idiomas
-    public const int Castellano = 1;
-    public const int Ingles = 2;
-    #endregion
-    */
 
     public class Idioma
     {
@@ -37,7 +31,6 @@ namespace CodingChallenge.Data.Classes
              
             return nombreIdioma;
         }
-        
         
         private static int GenerarKey()
         {
